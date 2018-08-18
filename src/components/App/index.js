@@ -53,9 +53,7 @@ class App extends Component {
         <div>
           {map(this.state.characters, character => (
             <Sentence key={character.id} color={toLower(character.role) === 'student' ? 'red' : 'black'}>
-              {character.name}
-               is a 
-              {character.bloodStatus}
+              <div>{character.name} is a {character.bloodStatus}</div>
             </Sentence>
           ))}
         </div>
