@@ -9,15 +9,17 @@ class Landing extends React.Component {
 
   handleClick = () => {
     this.setState({
-      counter: this.state.counter + 1
+      counter: this.state.counter + 1,
     });
   };
 
   render() {
     return (
-      <button onClick={this.handleClick}>
-        {this.state.counter}
-      </button>
+      <div className="Landing">
+        <button className="Button" type="button" onClick={this.handleClick}>
+          {this.state.counter}
+        </button>
+      </div>
     );
   }
 }

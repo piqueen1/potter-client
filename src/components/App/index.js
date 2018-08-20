@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import map from 'lodash/map';
+// import map from 'lodash/map';
 import styled from 'styled-components';
-import toLower from 'lodash/toLower';
-import logo from '../../assets/images/logo.svg';
+// import toLower from 'lodash/toLower';
+// import logo from '../../assets/images/logo.svg';
+import Landing from '../Landing';
 import './styles.css';
 
+// eslint-disable-next-line
 const Sentence = styled.p`
   color : ${props => props.color};
   font-size : 16px;
@@ -41,7 +43,8 @@ class App extends Component {
     console.log(this.state.characters);
     return (
       <div className="App">
-        <header className="App-header">
+        <Landing />
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
@@ -56,7 +59,7 @@ class App extends Component {
               <div>{character.name} is a {character.bloodStatus}</div>
             </Sentence>
           ))}
-        </div>
+        </div> */}
       </div>
     );
   }
