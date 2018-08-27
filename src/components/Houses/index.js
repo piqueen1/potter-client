@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
-import { map } from 'rxjs/operator/map';
+import map from 'lodash/map';
 
 class Houses extends Component {
   constructor(props) {
@@ -14,14 +14,14 @@ class Houses extends Component {
     const url = 'https://www.potterapi.com/v1/houses?key=%242a%2410%245wOJEuLpDgrj4Q4Ah0K9luTqacT518KBYUz5CIud2HDlJZIKFiXwy';
 
     fetch(url)
-      .then ((res) => {
+      .then((res) => {
         if (res.status >= 200 && res.status < 300) {
           return res.json();
         }
         console.warn('Voldemort struck! No houses for you!', res);
         return undefined;
       })
-      .then ((houses) => {
+      .then((houses) => {
         if (!houses) {
           return undefined;
         }
@@ -34,15 +34,27 @@ class Houses extends Component {
 
     return (
       <div className="houses">
-        {this.state.houses.map((house) => {
-          <div className="house" key="house.{houseID}">
+        {map(this.state.houses, house => (
+          <div className="house" key="house._id">
             <span className="name">
               {house.name}
             </span>
+            <span className="mascot">
+              {house.mascot}
+            </span>
+            <span className="headOfHouse">
+              {house.headOfHouse}
+            </span>
+            <span className="houseGhost">
+              { house.houseGhost }
+            </span>
+            <span className="values">
+              {house.values}
+            </span>
           </div>
-        },)};
+        ))}
       </div>
-    )
+    );
   }
 }
 
