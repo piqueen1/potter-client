@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 // import toLower from 'lodash/toLower';
 // import logo from '../../assets/images/logo.svg';
-import Houses from '../Houses';
+import House from '../House';
 import './styles.css';
 
 // eslint-disable-next-line
@@ -42,8 +42,8 @@ class App extends Component {
   render() {
     console.log(this.state.characters);
     return (
-      <div className="App">
-        <Houses />
+      <div className="House">
+        <House />
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
