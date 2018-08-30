@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './styles.js';
 
 class House extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      house: [],
+      house: {},
     };
   }
 
@@ -20,11 +19,11 @@ class House extends Component {
         console.warn('Voldemort struck!  No house for you!');
         return undefined;
       })
-      .then((house) => {
-        if (!house) {
+      .then((houses) => {
+        if (!houses) {
           return undefined;
         }
-        this.setState({ house });
+        this.setState({ house: houses[0] });
       });
   }
 
