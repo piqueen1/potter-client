@@ -27,11 +27,31 @@ class House extends Component {
       });
   }
 
+  getKeys() {
+    let keyArray = Object.keys(this.state.house).forEach((key) => {
+      console.log('key: ', key);
+
+      return key;
+    }, this);
+    return keyArray;
+  }
+
+  getValues() {
+    let valueArray = Object.values(this.state.house).forEach((value) => {
+      console.log('value: ', value);
+
+      return value;
+    }, this);
+    return valueArray;
+  }
+
   render() {
     console.log(this.state.house);
 
     return (
       <div className="house">
+        <h1> Here are the keys: {this.getKeys()} </h1>
+        <h2> Here are the values: {this.getValues()} </h2>
         {this.state.house.name} dearly holds these values to be sacred: {this.state.house.values}.
       </div>
     );
