@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import map from 'lodash/map';
 class House extends Component {
   constructor(props) {
     super(props);
@@ -52,10 +52,35 @@ class House extends Component {
       <div className="house">
         <h1> Here are the keys: {this.getKeys()} </h1>
         <h2> Here are the values: {this.getValues()} </h2>
-        {this.state.house.name} dearly holds these values to be sacred: {this.state.house.values}.
+        {this.state.house.name} dearly holds these values to be sacred: {map(this.state.house.values, value => (
+          <div className="value" key="value"> 
+            {house.values[0]}
+          </div>
+        ))}
       </div>
     );
   }
 }
 
 export default House;
+
+/*       {map(this.state.houses, house => (
+          <div className="house" key="house._id">
+            <div className="name">
+              {house.name}
+            </div>
+            <div className="mascot">
+              {house.mascot}
+            </div>
+            <div className="headOfHouse">
+              {house.headOfHouse}
+            </div>
+            <div className="houseGhost">
+              { house.houseGhost }
+            </div>
+            <div className="values">
+              {house.values}
+            </div>
+          </div>
+        ))}
+*/

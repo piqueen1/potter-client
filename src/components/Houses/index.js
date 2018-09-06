@@ -36,21 +36,21 @@ class Houses extends Component {
       <div className="houses">
         {map(this.state.houses, house => (
           <div className="house" key="house._id">
-            <span className="name">
+            <div className="name">
               {house.name}
-            </span>
-            <span className="mascot">
+            </div>
+            <div className="mascot">
               {house.mascot}
-            </span>
-            <span className="headOfHouse">
+            </div>
+            <div className="headOfHouse">
               {house.headOfHouse}
-            </span>
-            <span className="houseGhost">
+            </div>
+            <div className="houseGhost">
               { house.houseGhost }
-            </span>
-            <span className="values">
+            </div>
+            <div className="values">
               {house.values}
-            </span>
+            </div>
           </div>
         ))}
       </div>
