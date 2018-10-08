@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './styles.css';
 import map from 'lodash/map';
 
 class Houses extends Component {

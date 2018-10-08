@@ -31,8 +31,6 @@ class House extends Component {
   }
 
   render() {
-    console.log(this.state.house);
-
     return (
       <div className="house">
         <div className="house-name">{this.state.house.name}</div>
